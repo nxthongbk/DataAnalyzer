@@ -1,5 +1,5 @@
 # DataAnalyzer
-Update
+Update for auto start
 
 sudo nano .config/lxsession/LXDE-pi/autostart    
 
