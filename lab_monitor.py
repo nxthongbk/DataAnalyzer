@@ -82,7 +82,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def watchdog_ping():
     try:
-        print_log("WatchDog ping")
+        print("WatchDog ping")
         sock.sendto(MESSAGE.encode("utf-8"), (UDP_IP, UDP_PORT))
         sock.sendto(MESSAGE.encode("utf-8"), (UDP_IP, UDP_PORT + 1))
     except Exception as err:
