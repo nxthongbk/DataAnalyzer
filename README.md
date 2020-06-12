@@ -1,5 +1,7 @@
 # DataAnalyzer
-Update sudo nano .config/lxsession/LXDE-pi/autostart ^C   
+Update
+
+sudo nano .config/lxsession/LXDE-pi/autostart    
 
 ```@lxpanel --profile LXDE-pi   
 @pcmanfm --desktop --profile LXDE-pi   
