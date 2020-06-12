@@ -11,13 +11,13 @@ import socket
 
 print ("Network checking")
 while True:
-	try:
-		requests.get('https://google.com.vn/').status_code
-		print ("Network is connected")
-		break;
-	except:
-		print ("waiting for network")
-		time.sleep(5)
+    try:
+        requests.get('https://google.com.vn/').status_code
+        print ("Network is connected")
+        break;
+    except:
+        print ("waiting for network")
+        time.sleep(5)
 
 token=''
 audio_file=''
@@ -93,8 +93,6 @@ def watchdog_ping():
 def connect():
     print('connection established')
     
-
-  
 
 @sio.on('lab_monitor')
 def response(*args):
