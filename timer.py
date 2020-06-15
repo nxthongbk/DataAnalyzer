@@ -3,6 +3,10 @@
 import os
 import time
 import socket
+import time
+import requests
+import json
+
 
 def print_log(message):
     print(message)
@@ -11,6 +15,16 @@ def print_log(message):
 UDP_IP = "127.0.0.1"
 UDP_PORT = 5005
 MESSAGE = "Hello, WatchDog!"
+
+print ("Network checking")
+while True:
+    try:
+        requests.get('https://google.com.vn/').status_code
+        print ("Network is connected")
+        break;
+    except:
+        print ("waiting for network")
+        time.sleep(5)
 
 sock = socket.socket(socket.AF_INET, # Internet
             socket.SOCK_DGRAM) # UDP
@@ -31,7 +45,7 @@ while True:
         print_log("received message: %s"% data.decode("utf-8"))
         if data.decode("utf-8") == MESSAGE:
             print_log("WatchDog update")
-            watchdog_tick = time.time() + 300 # 15'
+            watchdog_tick = time.time() + 120 # 2'
             print_log("Next kick is %d" % watchdog_tick)
         time.sleep(2)
     except Exception as err:
